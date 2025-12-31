@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2026 | My Love</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --love-red: #ff4d6d;
+            --deep-rose: #c9184a;
+            --glass: rgba(255, 255, 255, 0.12);
+            --gold: #ffb703;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #0a0908;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Fireworks & Heart Layers */
+        canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Glass Container */
+        .carousel-wrapper {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 500px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Controls Bar */
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .icon-btn {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .icon-btn:hover { background: var(--love-red); }
+
+        /* Slides */
+        .slides-container {
+            flex: 1;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.9) translateY(20px);
+            transition: all 0.6s ease;
+            pointer-events: none;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            pointer-events: auto;
+        }
+
+        h1 { font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: var(--love-red); margin-bottom: 15px; }
+        p { font-weight: 300; line-height: 1.6; font-size: 0.95rem; }
+
+        /* Memory Grid */
+        .memory-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .memory-item {
+            width: 100%; height: 120px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        /* Navigation Buttons */
+        .nav-arrows {
+            position: absolute;
+            width: 120%;
+            left: -10%;
+            top: 50%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .arrow {
+            pointer-events: auto;
+            background: white;
+            color: var(--love-red);
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Signature */
+        .sig { font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--gold); margin-top: 20px; }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="fireworks"></canvas>
+    <canvas id="hearts"></canvas>
+
+    <div class="carousel-wrapper">
+        <div class="top-nav">
+            <button class="icon-btn" onclick="toggleAuto()"><i id="autoIcon" class="fas fa-play"></i></button>
+            <button class="icon-btn" onclick="toggleMusic()"><i id="musicIcon" class="fas fa-music"></i></button>
+        </div>
+
+        <div class="slides-container">
+            <div class="slide active">
+                <h1>Happy New Year 2026, My Love ❤️</h1>
+                <p>As the fireworks light up the sky, you are the only light I'm looking at. Cheers to another year of us.</p>
+                <p style="margin-top: 20px; font-style: italic;">"My favorite place in the world is next to you."</p>
+            </div>
+
+            <div class="slide">
+                <h3>Our Best Moments</h3>
+                <div class="memory-grid">
+                    
+                    <video class="memory-item" loop muted autoplay src="VID-20251227-WA0013.mp4"></video>
+                    <img src="IMG-20251227-WA0018.jpg" class="memory-item">
+                     <img src="IMG_20251231_153941.jpg"class="memory-item">
+                       <img src="Screenshot_2025-09-24-21-44-58-398_com.miui.gallery.jpg"class="memory-item">
+                       
+                    
+                </div>
+            </div>
+
+            <div class="slide">
+                <h3>A Note for You</h3>
+                <p>I don't need a new year to love you more, but I love having another 365 days to show you how much you mean to me. You are my home, my heart, and my forever.</p>
+                <div class="sig">Yours, Bibek</div>
+            </div>
+
+            <div class="nav-arrows">
+                <button class="arrow" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="arrow" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <footer>FOREVER & ALWAYS ✨</footer>
+
+    <audio id="bgMusic" loop>
+        <source src="ed_sheeran_-_perfect_official_music_video_480p.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        let autoInterval;
+
+        function changeSlide(dir) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + dir + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        function toggleAuto() {
+            const icon = document.getElementById('autoIcon');
+            if (autoInterval) {
+                clearInterval(autoInterval);
+                autoInterval = null;
+                icon.classList.replace('fa-pause', 'fa-play');
+            } else {
+                autoInterval = setInterval(() => changeSlide(1), 4000);
+                icon.classList.replace('fa-play', 'fa-pause');
+            }
+        }
+
+        function toggleMusic() {
+            const music = document.getElementById('bgMusic');
+            const icon = document.getElementById('musicIcon');
+            if (music.paused) { music.play(); icon.style.color = "#ff4d6d"; }
+            else { music.pause(); icon.style.color = "white"; }
+        }
+
+        // --- HEARTS SYSTEM ---
+        const heartCanvas = document.getElementById('hearts');
+        const hctx = heartCanvas.getContext('2d');
+        heartCanvas.width = window.innerWidth;
+        heartCanvas.height = window.innerHeight;
+
+        let heartArray = [];
+        class Heart {
+            constructor() {
+                this.x = Math.random() * heartCanvas.width;
+                this.y = heartCanvas.height + 20;
+                this.size = Math.random() * 15 + 5;
+                this.speed = Math.random() * 2 + 1;
+                this.opacity = 1;
+            }
+            draw() {
+                hctx.globalAlpha = this.opacity;
+                hctx.fillStyle = '#ff4d6d';
+                hctx.beginPath();
+                hctx.moveTo(this.x, this.y);
+                hctx.bezierCurveTo(this.x - this.size/2, this.y - this.size/2, this.x - this.size, this.y + this.size/3, this.x, this.y + this.size);
+                hctx.bezierCurveTo(this.x + this.size, this.y + this.size/3, this.x + this.size/2, this.y - this.size/2, this.x, this.y);
+                hctx.fill();
+            }
+            update() {
+                this.y -= this.speed;
+                this.opacity -= 0.005;
+            }
+        }
+
+        // --- FIREWORKS SYSTEM ---
+        const fwCanvas = document.getElementById('fireworks');
+        const fctx = fwCanvas.getContext('2d');
+        fwCanvas.width = window.innerWidth;
+        fwCanvas.height = window.innerHeight;
+
+        let particles = [];
+        function createFirework(x, y) {
+            for(let i=0; i<30; i++) {
+                particles.push({
+                    x, y,
+                    dx: (Math.random() - 0.5) * 8,
+                    dy: (Math.random() - 0.5) * 8,
+                    color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+                    life: 100
+                });
+            }
+        }
+
+        function animate() {
+            hctx.clearRect(0,0,heartCanvas.width, heartCanvas.height);
+            fctx.fillStyle = 'rgba(10, 9, 8, 0.2)';
+            fctx.fillRect(0,0,fwCanvas.width, fwCanvas.height);
+
+            if(Math.random() < 0.05) heartArray.push(new Heart());
+            heartArray.forEach((h, i) => {
+                h.update(); h.draw();
+                if(h.opacity <= 0) heartArray.splice(i, 1);
+            });
+
+            if(Math.random() < 0.03) createFirework(Math.random() * fwCanvas.width, Math.random() * fwCanvas.height * 0.5);
+            particles.forEach((p, i) => {
+                p.x += p.dx; p.y += p.dy; p.life--;
+                fctx.fillStyle = p.color;
+                fctx.fillRect(p.x, p.y, 2, 2);
+                if(p.life <= 0) particles.splice(i, 1);
+            });
+
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            heartCanvas.width = fwCanvas.width = window.innerWidth;
+            heartCanvas.height = fwCanvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
